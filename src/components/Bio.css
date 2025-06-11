@@ -1,0 +1,191 @@
+.bio-container {
+  padding-top: 80px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+  color: #e6f1ff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.bio-header {
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  background: rgba(10, 25, 47, 0.7);
+  border-bottom: 1px solid #1e90ff;
+}
+
+.bio-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, #1e90ff, #00bfff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 10px rgba(30, 144, 255, 0.3);
+}
+
+.greeting {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: #a8b2d1;
+}
+
+.bio-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ...existing code... */
+
+.image-container {
+  flex: 1;
+  min-width: 300px;
+  height: 400px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  cursor: grab;
+  background: #101828; /* fallback background for canvas transparency */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Style the canvas inside image-container */
+.image-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  border-radius: 10px;
+  background: transparent;
+  box-shadow: none;
+  /* No animation here, animation is handled by Three.js */
+}
+
+/* Optional: cursor change on drag */
+.image-container:active {
+  cursor: grabbing;
+}
+@keyframes swing {
+  0% {
+    transform: rotate(-30g);
+  }
+  100% {
+    transform: rotate(30g);
+  }
+}
+/* ...existing code... */
+
+.description-container {
+  flex: 1;
+  min-width: 300px;
+  padding: 1.5rem;
+  background: rgba(10, 25, 47, 0.7);
+  border-radius: 10px;
+  border-left: 3px solid #1e90ff;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.description-title {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #1e90ff;
+}
+
+.description-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  color: #ccd6f6;
+}
+
+.navigation-arrows {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.arrow-button {
+  background: transparent;
+  border: none;
+  color: #1e90ff;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow-button:hover {
+  background: rgba(30, 144, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.arrow-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.page-indicator {
+  font-size: 1rem;
+  color: #a8b2d1;
+  min-width: 60px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .bio-content {
+    flex-direction: column;
+  }
+  
+  .image-container {
+    order: 1;
+    width: 100%;
+    height: 300px;
+  }
+  
+  .description-container {
+    order: 2;
+    width: 100%;
+  }
+  
+  .bio-header h1 {
+    font-size: 2rem;
+  }
+  
+  .greeting {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .bio-header {
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .description-title {
+    font-size: 1.5rem;
+  }
+  
+  .description-text {
+    font-size: 1rem;
+  }
+}

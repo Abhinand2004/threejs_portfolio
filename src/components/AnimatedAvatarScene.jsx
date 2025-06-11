@@ -821,11 +821,11 @@ function ArrowButtonNav() {
         }}
         tabIndex={0}
         aria-label="Navigate to next section"
-        onClick={() => navigate("/abc")}
+        onClick={() => navigate("/bio")}
         onKeyDown={e => {
           if (e.key === "Enter" || e.key === " ") {
             e.preventDefault()
-            navigate("/abc")
+            navigate("/bio")
           }
         }}
       >
